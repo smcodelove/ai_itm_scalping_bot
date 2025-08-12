@@ -1,0 +1,48 @@
+{
+    "application": {
+        "name": "AI ITM Scalping Bot",
+        "version": "1.0.0",
+        "environment": "development"
+    },
+    "database": {
+        "type": "sqlite",
+        "path": "data/trading_data.db",
+        "backup_interval": 3600
+    },
+    "data_feeds": {
+        "primary_source": "csv",
+        "update_frequency": 1,
+        "symbols": ["NIFTY", "BANKNIFTY"],
+        "timeframes": ["1m", "3m", "5m"]
+    },
+    "trading": {
+        "market_hours": {
+            "start": "09:15:00",
+            "end": "15:30:00",
+            "timezone": "Asia/Kolkata"
+        },
+        "instruments": {
+            "nifty_itm_range": 50,
+            "banknifty_itm_range": 100,
+            "min_volume": 1000,
+            "max_bid_ask_spread": 2.0
+        }
+    },
+    "performance": {
+        "max_latency_ms": 100,
+        "max_memory_mb": 1024,
+        "max_cpu_percent": 70
+    },
+    "logging": {
+        "level": "INFO",
+        "file_path": "logs/trading_bot.log",
+        "max_size_mb": 100,
+        "backup_count": 5
+    },
+    "gui": {
+        "theme": "dark",
+        "update_frequency_ms": 1000,
+        "chart_timeframe": "1m",
+        "default_window_size": "1200x800"
+    }
+}
